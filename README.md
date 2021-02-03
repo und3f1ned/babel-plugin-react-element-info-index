@@ -1,18 +1,18 @@
-# babel-plugin-react-element-info
+# babel-plugin-react-element-info-index
 
 > Babel plugin for exposing React element name and filename in DOM nodes
 
-[![npm version](https://img.shields.io/npm/v/babel-plugin-react-element-info.svg?style=flat-square)](https://www.npmjs.com/package/babel-plugin-react-element-info)
-[![npm downloads](https://img.shields.io/npm/dm/babel-plugin-react-element-info.svg?style=flat-square)](https://www.npmjs.com/package/babel-plugin-react-element-info)
-[![Build Status](https://travis-ci.org/suprraz/babel-plugin-react-element-info.svg?branch=master)](https://travis-ci.org/suprraz/babel-plugin-react-element-info)
+[![npm version](https://img.shields.io/npm/v/babel-plugin-react-element-info-index.svg?style=flat-square)](https://www.npmjs.com/package/babel-plugin-react-element-info-index)
+[![npm downloads](https://img.shields.io/npm/dm/babel-plugin-react-element-info-index.svg?style=flat-square)](https://www.npmjs.com/package/babel-plugin-react-element-info-index)
+[![Build Status](https://travis-ci.org/und3f1ned/babel-plugin-react-element-info-index.svg?branch=master)](https://travis-ci.org/und3f1ned/babel-plugin-react-element-info-index)
 
-[![Dependencies](https://img.shields.io/david/suprraz/babel-plugin-react-element-info.svg?style=flat-square)](https://david-dm.org/suprraz/babel-plugin-react-element-info)
-[![DevDependencies](https://img.shields.io/david/dev/suprraz/babel-plugin-react-element-info.svg?style=flat-square)](https://david-dm.org/suprraz/babel-plugin-react-element-info#info=devDependencies&view=list)
+[![Dependencies](https://img.shields.io/david/und3f1ned/babel-plugin-react-element-info-index.svg?style=flat-square)](https://david-dm.org/und3f1ned/babel-plugin-react-element-info-index)
+[![DevDependencies](https://img.shields.io/david/dev/und3f1ned/babel-plugin-react-element-info-index.svg?style=flat-square)](https://david-dm.org/und3f1ned/babel-plugin-react-element-info-index#info=devDependencies&view=list)
 
 ## Installation
 
 ```sh
-npm install --save-dev babel-plugin-react-element-info
+npm install --save-dev babel-plugin-react-element-info-index
 ```
 
 ## The problem solved
@@ -41,7 +41,7 @@ class Foo extends React.Component {
 class Foo extends React.Component {
   render() {
     return (
-      <MyReactComponent data-qa-node="MyReactComponent" data-qa-file="myInputFile">
+      <MyReactComponent data-qa="elementName_MyReactComponent_Index">
         My component contents
       </MyReactComponent>
     );
@@ -61,7 +61,7 @@ without options:
   "env": {
     "development": {
       "plugins": [
-        "react-element-info"
+        "react-element-info-index"
       ]
     }
   }
@@ -74,7 +74,7 @@ with options. Prefix is the attribute prefix, defaulting to `qa` (`data-qa-*`). 
   "env": {
     "development": {
       "plugins": [
-        ["react-element-info", {"prefix": "test-prefix"}]
+        ["react-element-info-index", {"prefix": "test-prefix"}]
       ]
     }
   }
@@ -93,7 +93,7 @@ without options:
 ```js
 require('babel-core').transform('code', {
   plugins: [
-    'react-element-info',
+    'react-element-info-index',
   ],
 });
 ```
@@ -102,7 +102,7 @@ with options:
 ```js
 require('babel-core').transform('code', {
   plugins: [
-    ['react-element-info', {prefix: 'text-prefix'}],
+    ['react-element-info-index', {prefix: 'text-prefix'}],
   ],
 });
 ```

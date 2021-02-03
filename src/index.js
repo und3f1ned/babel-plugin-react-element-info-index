@@ -5,7 +5,7 @@ export default function reactElementInfo({types: t}) {
   const defaultPrefix = 'data-qa';
   let prefix;
   let filenameAttr;
-  let nodeNameAttr;
+  let index = 0;
 
   const visitor = {
     Program(path, state) {
@@ -14,8 +14,7 @@ export default function reactElementInfo({types: t}) {
       } else {
         prefix = defaultPrefix;
       }
-      filenameAttr = `${prefix}-file`;
-      nodeNameAttr = `${prefix}-node`;
+      filenameAttr = `${prefix}`;
     },
 
     JSXOpeningElement(path, state) {
@@ -31,11 +30,6 @@ export default function reactElementInfo({types: t}) {
         return;
       }
 
-      newAttributes.push(t.jSXAttribute(
-        t.jSXIdentifier(nodeNameAttr),
-        t.stringLiteral(elementName),
-      ));
-
       let name;
       if (state.file && state.file.opts) {
         if (state.file.opts.basename) {
@@ -48,9 +42,11 @@ export default function reactElementInfo({types: t}) {
       if (name) {
         newAttributes.push(t.jSXAttribute(
           t.jSXIdentifier(filenameAttr),
-          t.stringLiteral(name)
+          t.stringLiteral(`${elementName}_${name}_${index}`)
         ));
       }
+
+      index++;
 
       attributes.push(...newAttributes);
     },

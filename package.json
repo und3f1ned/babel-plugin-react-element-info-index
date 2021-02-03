@@ -1,6 +1,6 @@
 {
-  "name": "babel-plugin-react-element-info",
-  "version": "1.1.0",
+  "name": "babel-plugin-react-element-info-index",
+  "version": "1.0.0",
   "description": "Adds React properties",
   "main": "lib/index.js",
   "scripts": {
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/suprraz/babel-plugin-react-element-info.git"
+    "url": "https://github.com/und3f1ned/babel-plugin-react-element-info-index.git"
   },
   "keywords": [
     "babel",
@@ -26,10 +26,9 @@
     "lib",
     "src"
   ],
-  "author": "Razvan Suprovici (https://github.com/suprraz)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/suprraz/babel-plugin-react-element-info/issues"
+    "url": "https://github.com/und3f1ned/babel-plugin-react-element-info-index/issues"
   },
   "dependencies": {},
   "devDependencies": {
